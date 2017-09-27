@@ -1,4 +1,4 @@
-# Vi# Stata IE Visual Library
+# Stata IE Visual Library
 
 This repository contains graphs created in Stata to explore impact evaluation data sets and display results. The Library plots and codes can be viewed [here](https://worldbank.github.io/Stata-IE-Visual-Library/). The folders in the repository contain the `.dta` and `.do` files that can be used to replicate the images in the Library.
 
