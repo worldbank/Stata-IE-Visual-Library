@@ -1,10 +1,10 @@
 # IE Visual Library in Stata
 
-## [Bar plots]
+## [Bar plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots)
 
-### [Bar plot of two variables by treatment]
+### [Bar plot of two variables by treatment](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment)
 
-![plot]
+![plot](https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png)
 
 ```stata
 # d;
@@ -23,11 +23,11 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 ```
 
 
-## [Density plots]
+## [Density plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Density%20plots)
 
-### [Density plot with averages]
+### [Density plot with averages](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Density%20plots/Density%20plot%20with%20averages)
 
-![plot]
+![plot](https://user-images.githubusercontent.com/15252541/30933363-622abee4-a398-11e7-98a6-432337ed7375.png)
 
 ```stata
 twoway 	(kdensity revenue if post == 0, color(gs10)) ///
@@ -41,10 +41,10 @@ twoway 	(kdensity revenue if post == 0, color(gs10)) ///
 			
 ```
 
-## [RD plots]
-### [Regression discontinuity plot with confidence intervals]
+## [RD plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots)
+### [Regression discontinuity plot with confidence intervals](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots/Regression%20discontinuity%20plots%20with%20confidence%20intervals)
 
-![rdplot1]
+![rdplot1](https://user-images.githubusercontent.com/15252541/30933351-576483a0-a398-11e7-84d1-0b143f353578.png)
 
 ```stata
 twoway  (lpolyci tmt_status pmt_score if pmt_score < `cutoff', clcolor(navy) acolor(gs14)) ///
@@ -58,11 +58,11 @@ twoway  (lpolyci tmt_status pmt_score if pmt_score < `cutoff', clcolor(navy) aco
 ```
 
 
-## [Scatter plots]
+## [Scatter plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots)
 
-### [Scatter plot with fitted line]
+### [Scatter plot with fitted line](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots/Scatter%20plot%20with%20fitted%20line)
 
-![scatterplot1]
+![scatterplot1](https://user-images.githubusercontent.com/15252541/30933356-5dcac8d0-a398-11e7-8dc9-b32d3cdc55f3.png)
 
 ```stata
 twoway 	(scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
