@@ -40,6 +40,8 @@ twoway 	(kdensity revenue if post == 0, color(gs10)) ///
 	bgcolor (white) graphregion(color(white))
 			
 ```
+###### Contribution: `@luizaandrade`
+
 
 ## [RD plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots)
 ### [Regression discontinuity plot with confidence intervals](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots/Regression%20discontinuity%20plots%20with%20confidence%20intervals)
@@ -56,7 +58,8 @@ twoway  (lpolyci tmt_status pmt_score if pmt_score < `cutoff', clcolor(navy) aco
 	bgcolor (white) graphregion(color(white))  ///
 	note("Note: gray area is 95% confidence interval.")
 ```
-###### Contribution: Luiza Andrade (@luizaandrade)
+###### Contribution: `@luizaandrade`
+
 
 ## [Scatter plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots)
 
@@ -74,3 +77,4 @@ twoway 	(scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
 	legend(order(2 "Pre-treatment" 4 "Post-treatment")) ///
 	bgcolor (white) graphregion(color(white))
 ```
+###### Contribution: `@luizaandrade`
