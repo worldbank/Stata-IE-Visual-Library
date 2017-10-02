@@ -56,7 +56,7 @@ twoway  (lpolyci tmt_status pmt_score if pmt_score < `cutoff', clcolor(navy) aco
 	bgcolor (white) graphregion(color(white))  ///
 	note("Note: gray area is 95% confidence interval.")
 ```
-
+###### Contribution: Luiza Andrade (@luizaandrade)
 
 ## [Scatter plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots)
 
