@@ -197,3 +197,39 @@ graphregion(color(white)) bgcolor(white)
 ```
 ###### Contribution: `@marcelamello90`
 
+### Scatter plot with polynomial smoothing and confidence interval
+
+![plot](https://user-images.githubusercontent.com/15252541/31147095-c531d050-a856-11e7-9192-33220486daaa.png)
+
+```stata
+***Create First Graph
+sum cons_pae_m_sine, det
+twoway scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)' ///
+	|| lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)', ///
+	legend(off) /// 
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'") /// 		m-hat
+	ytitle("`=ustrunescape("\u0073\u0302")'" " ") /// 		s-hat 
+	xlabel(50 "50" 100 "100" 150 "150" 200 "200") ///	
+	graphregion(color(white)) bgcolor(white) ///
+	name(s_by_mhat)
+
+***Create Second Graph
+sum cons_pae_m_sine, det
+twoway scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)' ///
+	|| lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)', ///
+	mcolor(maroon) ///
+	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ") /// 		s-hat/m-hat
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'") ///					m-hat
+	legend(order(2 3) label(3 "Local Poly.") label(2 "95% CI")) ///
+	graphregion(color(white)) bgcolor(white) ///
+	name(cv_by_mhat)
+
+***Combine graphs
+grc1leg s_by_mhat cv_by_mhat, ///
+	row(1) legendfrom(cv_by_mhat) ///
+	imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
+	position(6) fysize(75) fxsize(150) ///
+	graphregion(color(white)) plotregion(color(white))
+```
+###### Contribution: Paul Christian
+
