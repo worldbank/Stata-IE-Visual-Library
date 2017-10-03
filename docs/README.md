@@ -43,6 +43,34 @@ twoway 	(kdensity revenue if post == 0, color(gs10)) ///
 ###### Contribution: `@luizaandrade`
 
 
+## Maps
+### Map with levels os a variable
+
+![map](https://user-images.githubusercontent.com/15252541/31104861-ad015d6a-a7ad-11e7-8dcf-cd6b3220623e.png)
+
+```stata
+spmap jobs_scarce_code using world_shape_coord if admin!="Antarctica", id(id) ///
+fcolor(Reds) osize(.1) ocolor(black) ///
+clmethod(custom)  clbreaks(0 .2 .40 .6 .8 1)  ///
+legend(position(8) ///
+region(lcolor(black)) ///
+label(1 "No data") ///
+label(2 "0% to 20%") ///
+label(3 "20% to 40%") ///
+label(4 "40% to 60%") ///
+label(5 "60% to 80%") /// 
+label(6 "80% to 100%")) ///
+legend(region(color(white))) ///
+plotregion(icolor(bluishgray)) ///
+title("When jobs are scarce, men should have more of a right to a job than women.") ///
+subtitle("Agreement with the statement above by country") ///
+note("Source: World Values Survey (2014 or last available year)") ///
+saving(map, replace)
+graph export map.png, as(png)  replace
+```
+###### Contribution: `@marcelamello90`
+
+
 ## [RD plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots)
 ### [Regression discontinuity plot with confidence intervals](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots/Regression%20discontinuity%20plots%20with%20confidence%20intervals)
 
@@ -79,7 +107,7 @@ twoway 	(scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-### [Scatter plot with fitted line and confidence interval]()
+### Scatter plot with fitted line and confidence interval
 
 ![scatterplot2](https://user-images.githubusercontent.com/15252541/31103991-270f0464-a7a8-11e7-83a0-7edd4420c052.png)
 

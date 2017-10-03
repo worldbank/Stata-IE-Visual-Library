@@ -23,4 +23,4 @@
 	graphregion(color(white)) bgcolor(white) 
 			
 	* Save
-	graph export scatter.pdf, as(pdf)  replace
+	graph export "$VisLib\Scatter plots\Scatter plot with fitter line and confidence interval\plot.png", as(png)  replace
