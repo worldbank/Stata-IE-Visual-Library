@@ -31,6 +31,12 @@
 !Library/**/*.ado
 !Library/**/*.dta
 
+# Shapefiles
+!Library/**/*.shp
+!Library/**/*.shx
+!Library/**/*.dbf
+!Library/**/*.prj
+
 
 # Include some additional file formats in any output folder
 !docs/*.md
