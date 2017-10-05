@@ -22,7 +22,7 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 # d cr
 ```
 
-### [Combined bar plots with two axes]
+### [Combined bar plots with two axes](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Combined%20bar%20plots%20with%20two%20axes)
 
 ![plot](https://user-images.githubusercontent.com/15252541/31133308-0d1f4bc4-a82d-11e7-90e5-90fc797e5c4d.png)
 
@@ -80,7 +80,7 @@ twoway 	(kdensity revenue if post == 0, color(gs10)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-### Shaded k-density function
+### [Shaded k-density function](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Density%20plots/Shaded%20k-density%20functions)
 
 ![plot](https://user-images.githubusercontent.com/15252541/31140136-8eadf208-a841-11e7-85a9-54b8e35a6ad2.png)
 
@@ -106,8 +106,8 @@ twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///
 
 ###### Contribution: Paul Christian
 
-## Line plots
-### Fitted line with confidence intervals and text box
+## [Line plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Line%20plots)
+### [Fitted line with confidence intervals and text box](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Line%20plots/Fitted%20line%20with%20confidence%20interval%20and%20text%20box)
 
 ![plot](https://user-images.githubusercontent.com/15252541/31257085-8bf019e6-aa04-11e7-8161-62159c7e8933.png)
 
@@ -128,8 +128,8 @@ twoway 	(lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-## Maps
-### Map displaying levels of a variable
+## [Maps](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Maps)
+### [Map displaying levels of a variable](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Maps/Map%20displaying%20levels%20of%20a%20variable)
 
 ![map](https://user-images.githubusercontent.com/15252541/31104861-ad015d6a-a7ad-11e7-8dcf-cd6b3220623e.png)
 
@@ -192,7 +192,7 @@ twoway 	(scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-### Scatter plot with fitted line and confidence interval
+### [Scatter plot with fitted line and confidence interval](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots/Scatter%20plot%20with%20fitted%20line%20and%20confidence%20interval)
 
 ![scatterplot2](https://user-images.githubusercontent.com/15252541/31103991-270f0464-a7a8-11e7-83a0-7edd4420c052.png)
 
@@ -218,7 +218,7 @@ graphregion(color(white)) bgcolor(white)
 ```
 ###### Contribution: `@marcelamello90`
 
-### Scatter plot with polynomial smoothing and confidence interval
+### [Scatter plot with polynomial smoothing and confidence interval](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots/Scatter%20plot%20with%20polynomial%20smoothing%20and%20confidence%20intervals)
 
 ![plot](https://user-images.githubusercontent.com/15252541/31147095-c531d050-a856-11e7-9192-33220486daaa.png)
 
