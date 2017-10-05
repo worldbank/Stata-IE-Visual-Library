@@ -39,18 +39,18 @@ foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sug
 	if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
 	twoway 	bar number_group x if food_group=="`foodGroup'", ///
-			yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
-			barwidth(.9) fintensity(inten0) lcolor(black) /// 
-			xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
-			ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
-			line total_exp int1mo if food_group=="animal", ///
-			yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
-			ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
-			xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
-			title("`graphTitle'") xtitle("Month of Interview") ///
-			graphregion(color(white)) bgcolor(white) ///
-			legend(off) ///
-			name("`foodGroup'") 
+		yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
+		barwidth(.9) fintensity(inten0) lcolor(black) /// 
+		xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
+		ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
+		line total_exp int1mo if food_group=="animal", ///
+		yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
+		ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
+		xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
+		title("`graphTitle'") xtitle("Month of Interview") ///
+		graphregion(color(white)) bgcolor(white) ///
+		legend(off) ///
+		name("`foodGroup'") 
 			
 }
 
@@ -89,19 +89,19 @@ akdensity0 beta_, gen(x) at(beta_) bwidth(.0005) //akdensity0 comes from the use
 	
 sum beta_, d
 twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///    				  
-		area x beta_ if beta_>`r(p90)' & rank<980, color(gs14) || ///      						 
-		area x beta_ if rank>15 & beta_<(`r(p5)'), color(gs9) || ///    						 
-		area x beta_ if beta_>`r(p95)' & rank<980, color(gs9) || ///      						 
-		line x beta_ if rank>15  & rank<980, lcolor(black) || ///    							  
-		(pcarrowi -20 .00299 310 .00299, lcolor(cranberry) lpattern(dash) msize(zero)) || ///     
-		(pcarrowi -20 `r(mean)' 310 `r(mean)', lcolor(gs7) lpattern(dash) msize(zero)) || ///     
-		(pcarrowi -20 `r(p50)' 310 `r(p50)', lcolor(gs7) lpattern(dash) msize(zero)), /// 	      
-		legend(off) ///
-		xtitle("2SLS Coefficient from baseline model" " ") ///
-		ytitle("Density" " ") ///
-		xlabel(0 "0" .00299 "NQ=.00299" `r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" .015 ".02", angle(45)) ///
-		ylabel(none) ///
-		bgcolor(white) graphregion(color(white))
+	area x beta_ if beta_>`r(p90)' & rank<980, color(gs14) || ///      						 
+	area x beta_ if rank>15 & beta_<(`r(p5)'), color(gs9) || ///    						 
+	area x beta_ if beta_>`r(p95)' & rank<980, color(gs9) || ///      						 
+	line x beta_ if rank>15  & rank<980, lcolor(black) || ///    							  
+	(pcarrowi -20 .00299 310 .00299, lcolor(cranberry) lpattern(dash) msize(zero)) || ///     
+	(pcarrowi -20 `r(mean)' 310 `r(mean)', lcolor(gs7) lpattern(dash) msize(zero)) || ///     
+	(pcarrowi -20 `r(p50)' 310 `r(p50)', lcolor(gs7) lpattern(dash) msize(zero)), /// 	      
+	legend(off) ///
+	xtitle("2SLS Coefficient from baseline model" " ") ///
+	ytitle("Density" " ") ///
+	xlabel(0 "0" .00299 "NQ=.00299" `r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" .015 ".02", angle(45)) ///
+	ylabel(none) ///
+	bgcolor(white) graphregion(color(white))
 ```
 
 ###### Contribution: Paul Christian
