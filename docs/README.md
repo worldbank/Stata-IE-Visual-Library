@@ -32,9 +32,9 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sugar nut_pulse_seed spices other {
 	
 	if "`foodGroup'" == "animal"			local graphTitle Animal Sourced
-	if "`foodGroup'" == "fruit"				local graphTitle Fruit
-	if "`foodGroup'" == "grain"				local graphTitle Grain
-	if "`foodGroup'" == "veg"				local graphTitle Vegetables
+	if "`foodGroup'" == "fruit"			local graphTitle Fruit
+	if "`foodGroup'" == "grain"			local graphTitle Grain
+	if "`foodGroup'" == "veg"			local graphTitle Vegetables
 	if "`foodGroup'" == "starch"			local graphTitle Starchy Foods
 	if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
