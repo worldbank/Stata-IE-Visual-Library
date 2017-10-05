@@ -112,7 +112,6 @@ twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///
 ![plot](https://user-images.githubusercontent.com/15252541/31257085-8bf019e6-aa04-11e7-8161-62159c7e8933.png)
 
 ```stata
-* Graph
 twoway 	(lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05)) ///
 	(lfitci y_hat x_var if post == 0, color(gs15)) /// 
 	(lfit	x_var x_var	if post == 1, color(red) lwidth(.5) lpattern(dash)) ///
