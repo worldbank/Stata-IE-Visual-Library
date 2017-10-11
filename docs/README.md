@@ -24,7 +24,7 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 
 ### [Combined bar plots with two axes]
 
-![plot](https://user-images.githubusercontent.com/15252541/31133308-0d1f4bc4-a82d-11e7-90e5-90fc797e5c4d.png)
+![plot]((https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png)
 
 ```stata
 * Create individual graphs
@@ -43,7 +43,7 @@ foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sug
 			barwidth(.9) fintensity(inten0) lcolor(black) /// 
 			xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
 			ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
-			line total_exp int1mo if food_group=="animal", ///
+			line total_exp int1mo if food_group=="`foodGroup'", ///
 			yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
 			ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
 			xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
@@ -220,7 +220,7 @@ graphregion(color(white)) bgcolor(white)
 
 ### Scatter plot with polynomial smoothing and confidence interval
 
-![plot](https://user-images.githubusercontent.com/15252541/31147095-c531d050-a856-11e7-9192-33220486daaa.png)
+![plot](https://user-images.githubusercontent.com/15252541/31467481-1bce0e0e-aea8-11e7-8839-ba38c2310212.png)
 
 ```stata
 ***Create First Graph
@@ -228,19 +228,20 @@ sum cons_pae_m_sine, det
 twoway scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)' ///
 	|| lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)', ///
 	legend(off) /// 
-	xtitle(" " "`=ustrunescape("\u006D\u0302")'") /// 		m-hat
-	ytitle("`=ustrunescape("\u0073\u0302")'" " ") /// 		s-hat 
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) /// 									m-hat
+	ytitle("`=ustrunescape("\u0073\u0302")'" " ", size(large)) /// 									s-hat 
 	xlabel(50 "50" 100 "100" 150 "150" 200 "200") ///	
 	graphregion(color(white)) bgcolor(white) ///
 	name(s_by_mhat)
+
 
 ***Create Second Graph
 sum cons_pae_m_sine, det
 twoway scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)' ///
 	|| lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)', ///
 	mcolor(maroon) ///
-	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ") /// 		s-hat/m-hat
-	xtitle(" " "`=ustrunescape("\u006D\u0302")'") ///					m-hat
+	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) /// 					s-hat/m-hat
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///									m-hat
 	legend(order(2 3) label(3 "Local Poly.") label(2 "95% CI")) ///
 	graphregion(color(white)) bgcolor(white) ///
 	name(cv_by_mhat)
