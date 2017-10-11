@@ -23,7 +23,7 @@
 				barwidth(.9) fintensity(inten0) lcolor(black) /// 
 				xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
 				ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
-				line total_exp int1mo if food_group=="animal", ///
+				line total_exp int1mo if food_group=="`foodGroup'", ///
 				yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
 				ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
 				xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
