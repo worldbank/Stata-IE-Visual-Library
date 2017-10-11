@@ -39,25 +39,24 @@ foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sug
 	if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
 	twoway 	bar number_group x if food_group=="`foodGroup'", ///
-			yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
-			barwidth(.9) fintensity(inten0) lcolor(black) /// 
-			xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
-			ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
-			line total_exp int1mo if food_group=="`foodGroup'", ///
-			yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
-			ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
-			xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
-			title("`graphTitle'") xtitle("Month of Interview") ///
-			graphregion(color(white)) bgcolor(white) ///
-			legend(off) ///
-			name("`foodGroup'") 
-			
+		yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
+		barwidth(.9) fintensity(inten0) lcolor(black) /// 
+		xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
+		ylabel(0 "0" 1 "1" 2 "2" 3 "3", axis(1)) || ///
+		line total_exp int1mo if food_group=="`foodGroup'", ///
+		yaxis(2) ytitle("Total Value of Exp." "1000 Real Tz Sh.", axis(2)) ///
+		ylabel(0 "0" 500 "500" 1000 "1000" 1500 "1500" 2000 "2000" 2500 "2500", axis(2)) ///
+		xlabel(3 "3" 6 "6" 9 "9" 12 "12") lwidth(1.2) ///
+		title("`graphTitle'") xtitle("Month of Interview") ///
+		graphregion(color(white)) bgcolor(white) ///
+		legend(off) ///
+		name("`foodGroup'") 		
 }
 
 * Combine graphs into one
 * -----------------------
 graph combine 	starch animal fruit grain processed_sugar veg, ///
-				graphregion(color(white)) plotregion(color(white))
+			graphregion(color(white)) plotregion(color(white))
 ```
 ###### Contribution: Paul Christian
 
@@ -89,19 +88,19 @@ akdensity0 beta_, gen(x) at(beta_) bwidth(.0005) //akdensity0 comes from the use
 	
 sum beta_, d
 twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///    				  
-		area x beta_ if beta_>`r(p90)' & rank<980, color(gs14) || ///      						 
-		area x beta_ if rank>15 & beta_<(`r(p5)'), color(gs9) || ///    						 
-		area x beta_ if beta_>`r(p95)' & rank<980, color(gs9) || ///      						 
-		line x beta_ if rank>15  & rank<980, lcolor(black) || ///    							  
-		(pcarrowi -20 .00299 310 .00299, lcolor(cranberry) lpattern(dash) msize(zero)) || ///     
-		(pcarrowi -20 `r(mean)' 310 `r(mean)', lcolor(gs7) lpattern(dash) msize(zero)) || ///     
-		(pcarrowi -20 `r(p50)' 310 `r(p50)', lcolor(gs7) lpattern(dash) msize(zero)), /// 	      
-		legend(off) ///
-		xtitle("2SLS Coefficient from baseline model" " ") ///
-		ytitle("Density" " ") ///
-		xlabel(0 "0" .00299 "NQ=.00299" `r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" .015 ".02", angle(45)) ///
-		ylabel(none) ///
-		bgcolor(white) graphregion(color(white))
+	area x beta_ if beta_>`r(p90)' & rank<980, color(gs14) || ///      						 
+	area x beta_ if rank>15 & beta_<(`r(p5)'), color(gs9) || ///    						 
+	area x beta_ if beta_>`r(p95)' & rank<980, color(gs9) || ///      						 
+	line x beta_ if rank>15  & rank<980, lcolor(black) || ///    							  
+	(pcarrowi -20 .00299 310 .00299, lcolor(cranberry) lpattern(dash) msize(zero)) || ///     
+	(pcarrowi -20 `r(mean)' 310 `r(mean)', lcolor(gs7) lpattern(dash) msize(zero)) || ///     
+	(pcarrowi -20 `r(p50)' 310 `r(p50)', lcolor(gs7) lpattern(dash) msize(zero)), /// 	      
+	legend(off) ///
+	xtitle("2SLS Coefficient from baseline model" " ") ///
+	ytitle("Density" " ") ///
+	xlabel(0 "0" .00299 "NQ=.00299" `r(p50)' "Median=`median'" `r(mean)' "Mean=`mean'" .015 ".02", angle(45)) ///
+	ylabel(none) ///
+	bgcolor(white) graphregion(color(white))
 ```
 
 ###### Contribution: Paul Christian
@@ -114,17 +113,17 @@ twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///
 ```stata
 * Graph
 twoway 	(lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05)) ///
-		(lfitci y_hat x_var if post == 0, color(gs15)) /// 
-		(lfit	x_var x_var	if post == 1, color(red) lwidth(.5) lpattern(dash)) ///
-		(lfit 	y_hat x_var	if post == 0, color(gs8) lwidth(.5)) /// 
-		(lfit 	y_hat x_var	if post == 1, color(edkblue) lwidth(.5)), ///
-		text(5 9 "Pre-treatment" "Regression coefficent: 0`beta_pre'" "P-value of coefficent = 1: `f_pre'" ///
-			 12 9 "Post-treatment" "Regression coefficent: 0`beta_post'" "P-value of coefficent = 1: 0`f_post'", ///
-			 orient(horizontal) size(vsmall) justification(center) fcolor(white) box margin(small)) ///
-		xtitle("Independent variable value") ///
-		ytitle("Predicted value of dependent variable") ///
-		legend(order (6 "Pre-treatment" 7 "Post-treatment" 3 "Pre-treatment 95%CI" 1 "Pre-treatment 95%CI")) ///
-		graphregion(color(white)) bgcolor(white)
+	(lfitci y_hat x_var if post == 0, color(gs15)) /// 
+	(lfit	x_var x_var	if post == 1, color(red) lwidth(.5) lpattern(dash)) ///
+	(lfit 	y_hat x_var	if post == 0, color(gs8) lwidth(.5)) /// 
+	(lfit 	y_hat x_var	if post == 1, color(edkblue) lwidth(.5)), ///
+	text(5 9 "Pre-treatment" "Regression coefficent: 0`beta_pre'" "P-value of coefficent = 1: `f_pre'" ///
+		 12 9 "Post-treatment" "Regression coefficent: 0`beta_post'" "P-value of coefficent = 1: 0`f_post'", ///
+		 orient(horizontal) size(vsmall) justification(center) fcolor(white) box margin(small)) ///
+	xtitle("Independent variable value") ///
+	ytitle("Predicted value of dependent variable") ///
+	legend(order (6 "Pre-treatment" 7 "Post-treatment" 3 "Pre-treatment 95%CI" 1 "Pre-treatment 95%CI")) ///
+	graphregion(color(white)) bgcolor(white)
 ```
 ###### Contribution: `@luizaandrade`
 
