@@ -24,7 +24,7 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 
 ### [Combined bar plots with two axes]
 
-![plot]((https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png)
+![plot](https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png)
 
 ```stata
 * Create individual graphs
