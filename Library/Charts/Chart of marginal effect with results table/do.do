@@ -1,4 +1,4 @@
-* Figure: Chart of primary regression results for a variable list, combined with a table detailing those results.
+* Figure: Chart of primary regression results for a variable list, combined with a table detailing those results
 
  	cd "{directory}"
 
