@@ -3,7 +3,7 @@
 	cd "{directory}"
 	qui do "betterbar.ado"
 
-	use "sp_comparison.dta", clear
+	use "data.dta", clear
 		
 	recode study_code (2 = 1 "Kenya") (3/4 = 2 "India") (5 = 3 "China") (* = .), gen(studytemp)
 	
@@ -24,6 +24,6 @@
 			legend(symxsize(small) symysize(small) pos(6) ring(1) r(2) ) ///
 			barlook(1 lc(white) lw(thin) fi(100)) ysize(6)
 			
-		graph export "Figure_2.png" , replace width(2000)
+		graph export "Figure.png" , replace width(2000)
 				
 * Have a lovely day!

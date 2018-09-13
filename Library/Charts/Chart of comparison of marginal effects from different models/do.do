@@ -5,7 +5,7 @@
 
 	global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
-	use "sp_kenya.dta" , clear
+	use "data.dta" , clear
 		
 	label var as_correct "Asthma: Inhaler/Bronchdilator"
 	label var ch_correct "Child Diarrhea: ORS"
@@ -63,6 +63,6 @@
 		, $graph_opts ylab(`theLabels') ytit(" ") xlab(-1 "-100p.p." -.5 `""-50p.p." "{&larr} Favors Public""' 0 "No Effect" .5 `""+50p.p." "Favors Private {&rarr}""' 1 "+100p.p.") ///
 			xline(0 , lc(gs12) lp(dash)) legend(order(2 "Marginal Effect" 1 "Linear Model" 3 "Logistic Model") r(1))
 
-		graph export "outputs/Figure_A3.png" , replace width(2000)
+		graph export "figure.png" , replace width(2000)
 
 * Have a lovely day!

@@ -10,7 +10,7 @@
 * 	Data
 * ------------------------------------------------------------------------------
 
-	cd "$VisLib\Maps\Map displaying levels of a variable"
+	cd "{directory}"
 
 	*Shapefiles 
 	cap erase world_shape.dta

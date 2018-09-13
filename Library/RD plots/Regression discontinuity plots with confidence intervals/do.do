@@ -1,7 +1,8 @@
 	
 	* Load data
 	* ---------
-	use "$VisLib\RD plots\Regression discontinuity plots with confidence intervals\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Calculate cutoff
 	* ----------------
@@ -22,4 +23,4 @@
 			
 	* Export image
 	* ------------
-	gr export "$VisLib\RD plots\Regression discontinuity plots with confidence intervals\plot.png", width(5000) replace
+	gr export "figure.png", width(5000) replace

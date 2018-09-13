@@ -1,6 +1,7 @@
 * Figure: Density graph with data points
 
-	use "${directory}/vignettes_analysis.dta"  , clear
+	cd "{directory}"
+	use "data.dta"  , clear
 
 	global graph_opts title(, justification(left) color(black) span pos(11)) ///
 	  	graphregion(color(white)) ylab(,angle(0) nogrid notick) xscale(noline) yscale(noline) yline(0 , lc(black)) ///
@@ -23,6 +24,6 @@
 	  	, legend(symxsize(small) order(0 "" 0 "" 0 "{bf: Degree:}" 3 "Intermediate, Undergrad, or Bachelors (N=575)" 4 "Specialist or Masters (N=431)") c(1) pos(11) ring(0)) $graph_opts $hist_opts ///
 	  	xtit("Knowledge Score {&rarr}") xlab(0(1)7) yline(10 20 30 , lc(gs12) lp(dot)) xsize(7)
 
-	  	graph export "${directory}/figure_3.png" , replace width(1000)
+	  	graph export "figure.png" , replace width(1000)
 
 * Have a lovely day!

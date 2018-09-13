@@ -1,6 +1,7 @@
 
 	* Load data set
-	use "$VisLib\Line plots\Line fit plot with confidence interval and text box\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Treament effect															
 	reg 	y_var x_var post x_var_post control
@@ -32,4 +33,4 @@
 			graphregion(color(white)) bgcolor(white)
 	
 	* Save graph
-	gr export	"$VisLib/Line plots\Line fit plot with confidence interval and text box\plot.png", width(5000) replace
+	gr export	"figure.png", width(5000) replace

@@ -1,6 +1,7 @@
 
 	* Load data
-	use "$VisLib\Scatter plots\Scatter plot with fitted line and confidence interval\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Graph
 	twoway ///
@@ -23,4 +24,4 @@
 	graphregion(color(white)) bgcolor(white) 
 			
 	* Save
-	graph export "$VisLib\Scatter plots\Scatter plot with fitted line and confidence interval\plot.png", as(png)  replace
+	graph export "figure.png", as(png)  replace

@@ -4,7 +4,7 @@
 
 	qui do "chartable.ado"
 	
-	use "sp_kenya.dta" , clear
+	use "data.dta" , clear
 	
 	label var as_correct "Asthma: Inhaler/Bronchodilator"
 	label var ch_correct "Child Diarrhoea: ORS"
@@ -14,7 +14,7 @@
 	chartable ??_correct refer med_any med_class_any_6 med_class_any_16 ///
 		, xsize(8) rhs(facility_private i.case_code) command(logit) or p case0(Public) case1(Private)
 		
-		graph export "Figure_1.png" , replace width(2000)
+		graph export "figure.png" , replace width(2000)
 	
 				
 * Have a lovely day!

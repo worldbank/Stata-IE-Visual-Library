@@ -6,7 +6,8 @@
 
 	* Vietnam
 
-		use "${directory}/vietnam_po.dta" , clear
+		cd "{directory}"
+		use "data1.dta" , clear
 
 		egen id = group(FACILITY_ID DOCTOR_ID location_type)
 
@@ -25,7 +26,7 @@
 
 	* India
 
-		use "${directory}/knowdo_data.dta" , clear
+		use "data2.dta" , clear
 
 		gen tottime = .
 
@@ -53,7 +54,7 @@
 			hor ylab(1 "1 Hour" 2 "2 Hours" 3 "3 Hours") bar(1,fi(100) lc(black) lw(thin)) ///
 			ytit("Average Daily Time Seeing Patients {&rarr}",placement(left) justification(left))
 
-			graph export "${directory}/figure_1.png" , replace width(1000)
+			graph export "figure.png" , replace width(1000)
 
 
 * Have a lovely day!

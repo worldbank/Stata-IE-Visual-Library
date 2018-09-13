@@ -3,7 +3,8 @@
 	global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
 		ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
 
-		use "${directory}/knowdo_data.dta" , clear
+		cd "{directory}"
+		use "data.dta" , clear
 
 		drop if type == "Baseline Vignette"
 		keep if ///
@@ -49,6 +50,6 @@
 			legend(r(1) order(0 "Measurement:" 1 "Standardized Patient" 2 "Clinical Vignette")) ///
 			ytit("Providers ordering correct treatment {&rarr}", placement(bottom) justification(left)) ylab($pct)
 
-			graph export "${directory}/figure_4.png" , replace width(1000)
+			graph export "figure.png" , replace width(1000)
 
 * Have a lovely day!

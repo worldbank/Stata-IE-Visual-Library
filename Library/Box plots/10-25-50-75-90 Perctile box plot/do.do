@@ -1,6 +1,7 @@
 * Figure: 10-25-50-75-90 perctile box plot
 
-		use "${directory}/SDI_analysis.dta" , clear
+		cd "{directory}"
+		use "data.dta" , clear
 
 		global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
 		ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
@@ -35,6 +36,6 @@
 			lintensity(.5) yline(.553483 , lc(black) lp(dash)) ///
 			box(1 , fi(0) lc(maroon) lw(medthick)) box(2, fc(white) lc(navy) lw(medthick))
 
-			graph export "${directory}/figure_2.png" , replace width(1000)
+			graph export "figure.png" , replace width(1000)
 
 * Have a lovely day!

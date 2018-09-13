@@ -8,7 +8,7 @@
 	global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 	
 
-	use "sp_kenya.dta" , clear
+	use "data.dta" , clear
 		
 	label var as_correct "Asthma: Inhaler/Bronchodilator"
 	label var ch_correct "Child Diarrhoea: ORS"
@@ -24,6 +24,6 @@
 		??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 ///
 		, $graph_opts over(facility_type) xlab(${pct}) barlab(mean) legend(r(1) symxsize(small) symysize(small))
 		
-		graph export "Figure_A2.png" , replace width(2000)
+		graph export "figure.png" , replace width(2000)
 		
 * Have a lovely day!
