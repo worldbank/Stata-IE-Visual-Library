@@ -1,17 +1,18 @@
 * Figure:Side by side horizontal bar plot (Outcomes by City & Case) using weightab
 
-	cd "{directory}"
-	qui do "weightab.ado"
-
-	label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
-
-	local opts lw(thin) lc(white) la(center)
-
 	global graph_opts ///
 		title(, justification(left) color(black) span pos(11)) ///
 		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
 		ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
 		yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
+
+	local opts lw(thin) lc(white) la(center)
+
+	label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
+
+
+	cd "{directory}"
+	qui do "weightab.ado"
 
 	use "data.dta" , clear
 

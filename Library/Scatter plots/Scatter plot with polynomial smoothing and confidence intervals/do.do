@@ -1,3 +1,4 @@
+* Figure: Scatter plot with polynomial smoothing and confidence interval
 
 **************************************
 ***				Notes			   ***
@@ -48,3 +49,5 @@ grc1leg s_by_mhat cv_by_mhat, ///
 	position(6) fysize(75) fxsize(150) ///
 	graphregion(color(white)) plotregion(color(white))
 	graph export "figure.png", as(png) replace
+
+* Have a lovely day!

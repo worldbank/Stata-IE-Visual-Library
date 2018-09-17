@@ -1,4 +1,4 @@
-* Figure 2:  Venn Diagram
+* Figure:  Venn Diagram
 
 	cd "{directory}"
 

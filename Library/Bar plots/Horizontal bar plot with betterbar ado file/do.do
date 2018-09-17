@@ -18,9 +18,6 @@
 	
 	version 13
 	
-	
-* Figure 1. Proportion of providers who completed history and physical examinations for SP1 cases (N=75 interactions)
-
 	use "data.dta", clear
 		
 	betterbar ///

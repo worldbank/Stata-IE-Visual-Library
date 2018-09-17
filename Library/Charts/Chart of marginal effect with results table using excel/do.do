@@ -3,7 +3,7 @@
 
 * Indicate the location of the Public Release folder: only this line should need to be edited by the user.
 
-	cd "C:\Users\Saori\Documents\Github\Data vis\lancetid2015\New folder"
+	cd "{directory}"
 
 * Load adofiles
 
@@ -38,7 +38,7 @@
 		, 	c(xi: firthlogit) rhs(q_mbbs pro_age pro_male patients_waiting_in i.sp_id) or p globalif
 			
 		graph save   "figure.gph" , replace
-	*	graph export "figure.eps" , replace
+		graph export "figure.eps" , replace
 		graph export "figure.png" , width(4000) replace
 	
 			

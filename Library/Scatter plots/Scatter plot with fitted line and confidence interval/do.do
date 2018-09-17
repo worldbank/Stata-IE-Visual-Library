@@ -1,3 +1,4 @@
+*Figure: Scatter plot with fitted line and confidence interval
 
 	* Load data
 	cd "{directory}"
@@ -25,3 +26,5 @@
 			
 	* Save
 	graph export "figure.png", as(png)  replace
+
+* Have a lovely day!

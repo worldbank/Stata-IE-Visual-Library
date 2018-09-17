@@ -1,12 +1,11 @@
 * Figure: Horizontal bar with multiple variables
 
-	cd "{directory}"
-
-	qui do "betterbar.ado"
-
 	global graph_opts title(, justification(left) color(black) span pos(11)) graphregion(color(white)) ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 	global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
-	
+
+	cd "{directory}"
+
+	qui do "betterbar.ado"	
 
 	use "data.dta" , clear
 		

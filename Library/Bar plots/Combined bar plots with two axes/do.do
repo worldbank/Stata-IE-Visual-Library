@@ -1,4 +1,4 @@
-
+* Figure: combined bar plots with two axes
 
 	* Load data
 	* ---------
@@ -43,3 +43,5 @@
 	* Save
 	* ----
 	graph export "figure.png", as(png) replace
+
+* Have a lovely day!

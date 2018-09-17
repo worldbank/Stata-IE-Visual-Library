@@ -1,10 +1,11 @@
 * Figure: 10-25-50-75-90 perctile box plot
 
-		cd "{directory}"
-		use "data.dta" , clear
-
 		global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
 		ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
+
+		cd "{directory}"
+
+		use "data.dta" , clear
 
 		drop if provider_cadre == 2 | provider_cadre == 4 | provider_cadre == .
 		drop if country == "Tanzania-2014"

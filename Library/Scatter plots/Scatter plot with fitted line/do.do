@@ -1,3 +1,4 @@
+*Figure: scatter plot with fitted line
 
 	* Load data
 	* ---------
@@ -21,4 +22,5 @@
 	gr export "figure.png", width(5000) replace
 
 			
+* Have a lovely day!
 			

@@ -1,3 +1,4 @@
+* Maps displaying levels of a variable
 
 * ------------------------------------------------------------------------------
 * 	Packages
@@ -46,3 +47,5 @@
 	note("Source: World Values Survey (2014 or last available year)") ///
 	saving(map, replace)
 	graph export map.png, as(png)  replace
+
+* Have a lovely day!

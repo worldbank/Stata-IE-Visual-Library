@@ -1,14 +1,15 @@
 * Figure: Density graph with data points
 
-	cd "{directory}"
-	use "data.dta"  , clear
-
 	global graph_opts title(, justification(left) color(black) span pos(11)) ///
 	  	graphregion(color(white)) ylab(,angle(0) nogrid notick) xscale(noline) yscale(noline) yline(0 , lc(black)) ///
 	  	xtit(,placement(left) justification(left)) legend(region(lc(none) fc(none)))
 
 	global hist_opts ylab(, angle(0) axis(2)) yscale(noline alt axis(2)) ///
 	  	ytit(, axis(2)) ytit(, axis(1)) yscale(off axis(2)) yscale(alt)
+
+
+	cd "{directory}"
+	use "data.dta"  , clear
 
 	qui su theta_mle
 

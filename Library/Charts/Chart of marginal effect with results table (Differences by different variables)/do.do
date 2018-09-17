@@ -1,8 +1,5 @@
 * Figure 3: Chart of marginal effect with results table (Differences by city and qualification)
 
-	cd "{directory}"
-	qui do "chartable.ado"
-	
 	global graph_opts ///
 		title(, justification(left) color(black) span pos(11)) ///
 		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
@@ -13,6 +10,9 @@
 		graphregion(color(white) lc(white) lw(med) la(center))
 
 
+	cd "{directory}"
+	qui do "chartable.ado"
+	
 	use "data.dta", clear
 
 		chartable ///

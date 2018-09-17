@@ -1,4 +1,5 @@
-	
+*Figure: Shaded k-density functions
+
 	* Packages required
 	ssc install akdensity
 
@@ -38,3 +39,5 @@
 	
 	* Save
 	graph export "figure.png", as(png) replace
+
+* Have a lovely day!

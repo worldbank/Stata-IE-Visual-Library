@@ -1,3 +1,4 @@
+*Figure: Line plots witthed line with confidence interval
 
 	* Load data set
 	cd "{directory}"
@@ -34,3 +35,5 @@
 	
 	* Save graph
 	gr export	"figure.png", width(5000) replace
+
+* Have a lovely day!

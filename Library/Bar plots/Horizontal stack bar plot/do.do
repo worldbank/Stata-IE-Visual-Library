@@ -1,9 +1,5 @@
 * Figure: horizontal stack bar plot
 
-*	set matsize 5000
-	cd "{directory}"
-	
-
 	global graph_opts1 ///
 		title(, justification(left) color(black) span pos(11)) ///
 		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
@@ -13,6 +9,9 @@
 
 	global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 
+	set matsize 5000
+
+	cd "{directory}"
 	
 	use "data.dta" , clear
 

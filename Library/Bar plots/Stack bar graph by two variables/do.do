@@ -6,18 +6,15 @@
 * A cross-sectional study. 
 * The Lancet Infectious Diseases. 2016 Nov 30;16(11):1261-8.
 
+	global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ylab(,angle(0) nogrid) subtitle(, justification(left) color(black) span pos(11)) title(, color(black) span)
+	global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
+
+
 	version 13
 	cd "{directory}"
 
-
 	qui do "tabgen.ado"
-	global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ylab(,angle(0) nogrid) subtitle(, justification(left) color(black) span pos(11)) title(, color(black) span)
-	global pct `" 0 "0%" .25 "25%" .5 "50%" .75 "75%" 1 "100%" "'
 	
-
-	
-* 
-
 	use "data.dta", clear
 	
 	gen n = 1 

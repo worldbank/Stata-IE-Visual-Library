@@ -1,4 +1,5 @@
-	
+* Figure: Density plots with averages
+
 	* Load data
 	* ---------
 	cd "{directory}"
@@ -25,3 +26,5 @@
 	* Export image
 	* ------------
 	gr export "figure.png", width(5000) replace
+
+* Have a lovely day!
