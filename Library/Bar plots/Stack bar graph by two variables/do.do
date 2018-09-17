@@ -1,4 +1,4 @@
-* Figure 2. Stack bar graph by two variables (Drug use by referral decisions for two standardised patient cases)
+* Figure: Stack bar graph by two variables (Drug use by referral decisions for two standardised patient cases)
 
 * Replication file for:
 * Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 

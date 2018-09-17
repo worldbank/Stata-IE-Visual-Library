@@ -1,4 +1,4 @@
-* Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case)
+* Figure: Side by side horizontal bar plot (Active ingredients in drugs given for each case) using betterbar
 
 * Replication file for:
 * Satyanarayana S, Kwan A, Daniels B, Subbaraman R, McDowell A, Bergkvist S, Das RK, Das V, Das J, Pai M. 
