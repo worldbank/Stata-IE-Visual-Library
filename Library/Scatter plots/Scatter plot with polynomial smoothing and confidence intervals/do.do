@@ -1,3 +1,4 @@
+* Figure: Scatter plot with polynomial smoothing and confidence interval
 
 **************************************
 ***				Notes			   ***
@@ -12,7 +13,8 @@
 
 
 ***Load Data
-use "$VisLib/Scatter plots/Scatter plot with polynomial smoothing and confidence intervals/data", clear
+cd "{directory}"
+use "data", clear
 
 
 ***Create First Graph
@@ -34,7 +36,7 @@ sum cons_pae_m_sine, det
 twoway scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)' ///
 	|| lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)', ///
 	mcolor(maroon) ///
-	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) /// 						s-hat/m-hat
+	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) /// 					s-hat/m-hat
 	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///									m-hat
 	legend(order(2 3) label(3 "Local Poly.") label(2 "95% CI")) ///
 	graphregion(color(white)) bgcolor(white) ///
@@ -46,4 +48,6 @@ grc1leg s_by_mhat cv_by_mhat, ///
 	imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
 	position(6) fysize(75) fxsize(150) ///
 	graphregion(color(white)) plotregion(color(white))
-	graph export "$VisLib/Scatter plots/Scatter plot with polynomial smoothing and confidence intervals/plot.png", as(png) replace
+	graph export "figure.png", as(png) replace
+
+* Have a lovely day!

@@ -2,23 +2,26 @@
 
 ## [Bar plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots)
 
-### [Bar plot of two variables by treatment](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment)
+### [Bar plot of two variables](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment) *update link*
 
-![plot](https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png)
+![plot](https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png)*update link*
 
 ```stata
 # d;
-graph bar w_total_val_harvested_a w_total_val_inputs_a, 
-	  over(treated)		
-	  bargap(-30)
-	  legend(label(1 "Total Value Harvested")
-			 label(2 "Total Value Inputs"))
-	  bar (1, color("0 102 102") ) 
-	  bar (2, color("153  0 76") ) 
-	  ytitle ("Value in RWF")	
-	  title  ("Harvested value and Input Value")
-	  subtitle ("By treatment")
-	  note ("Note: Variables are winsorized at 0.01");
+		graph bar treat_correct, ///
+			over(type) asy bargap(20) over(study) over(case) nofill ///
+			blabel(bar, format(%9.2f)) ///
+			bgcolor(white) graphregion(color(white)) ///
+			legend(region(lc(none) fc(none))) ///
+			ylab(,angle(0) nogrid) ///
+			title(, justification(left) color(black) span pos(11)) ///
+			subtitle(, justification(left) color(black)) ///
+			bar(1 , lc(black) lw(thin) fi(100)) ///
+			bar(2 , lc(black) lw(thin) fi(100)) ///
+			legend(r(1) order(0 "Measurement:" 1 "Standardized Patient" 2 "Clinical Vignette")) ///
+			ytit("Providers ordering correct treatment {&rarr}", placement(bottom) justification(left)) ///
+			ylab($pct)
+
 # d cr
 ```
 

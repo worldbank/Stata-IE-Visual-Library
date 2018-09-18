@@ -1,8 +1,9 @@
-
+* Figure: combined bar plots with two axes
 
 	* Load data
 	* ---------
-	use "$VisLib\Bar plots\Combined bar plots with two axes\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Adjust variable for bar position
 	gen x = int1mo+.5
@@ -41,4 +42,6 @@
 					
 	* Save
 	* ----
-	graph export "$VisLib\Bar plots\Combined bar plots with two axes\plot.png", as(png) replace
+	graph export "figure.png", as(png) replace
+
+* Have a lovely day!
