@@ -1,7 +1,10 @@
+*Figure: scatter plot with fitted line
 
 	* Load data
 	* ---------
-	use "$VisLib\Scatter plots\Scatter plot with fitted line\data.dta", clear
+	
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Plot
 	* ----
@@ -16,7 +19,8 @@
 			
 	* Export image
 	* ------------
-	gr export "$VisLib\Scatter plots\Scatter plot with fitted line\plot.png", width(5000) replace
+	gr export "figure.png", width(5000) replace
 
 			
+* Have a lovely day!
 			
