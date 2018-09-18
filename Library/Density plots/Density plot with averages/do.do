@@ -1,7 +1,9 @@
-	
+* Figure: Density plots with averages
+
 	* Load data
 	* ---------
-	use "$VisLib\Density plots\Density plot with averages\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Calculate means
 	* ---------------
@@ -23,4 +25,6 @@
 			
 	* Export image
 	* ------------
-	gr export "$VisLib\Density plots\Density plot with averages\plot.png", width(5000) replace
+	gr export "figure.png", width(5000) replace
+
+* Have a lovely day!

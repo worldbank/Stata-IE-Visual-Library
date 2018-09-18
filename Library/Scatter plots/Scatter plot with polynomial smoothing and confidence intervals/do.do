@@ -1,3 +1,4 @@
+* Figure: Scatter plot with polynomial smoothing and confidence interval
 
 **************************************
 ***				Notes			   ***
@@ -12,7 +13,8 @@
 
 
 ***Load Data
-use "$VisLib/Scatter plots/Scatter plot with polynomial smoothing and confidence intervals/data", clear
+cd "{directory}"
+use "data", clear
 
 
 ***Create First Graph
@@ -46,4 +48,6 @@ grc1leg s_by_mhat cv_by_mhat, ///
 	imargin(0 0 0 0) graphregion(margin(t=0 b=0)) ///
 	position(6) fysize(75) fxsize(150) ///
 	graphregion(color(white)) plotregion(color(white))
-	graph export "$VisLib/Scatter plots/Scatter plot with polynomial smoothing and confidence intervals/plot.png", as(png) replace
+	graph export "figure.png", as(png) replace
+
+* Have a lovely day!
