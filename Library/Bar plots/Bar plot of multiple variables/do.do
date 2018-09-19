@@ -52,6 +52,3 @@
 		legend(label(1 "Baseline-Control") label(2 "Midline-Control") label(5 "Baseline-Treatment") label(6 "Midline-Treatment") order(1 5 2 6)) 
 	graph export "$data/Documentation/Graphs and figures/agriculture/Figure 18 - average annual production of common crops - combined.pdf", replace
 restore 
-}
- 
-
