@@ -27,8 +27,6 @@
 		replace case = "Tuberculosis (AFB or CXR)" if regexm(case,"TB1")
 		replace study = `""Madhya" "Pradesh""' if regexm(study,"Madhya Pradesh")
 
-		drop if child == 1
-
 		keep study case type treat_correct
 
 		collapse (mean) treat_correct , by(study case type)

@@ -1,6 +1,6 @@
 *Figure: Bar plot of multiiple variables
 
-	cd "C:\Users\Saori\Documents\Github\Stata-IE-Visual-library-fork\Library\Bar plots\Bar plot of multiple variables"
+	cd "{directory}"
 	use "data.dta", clear
 
 		* Using existing variables to create separate for rounds
