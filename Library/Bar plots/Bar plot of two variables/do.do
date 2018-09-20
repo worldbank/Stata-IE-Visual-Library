@@ -8,9 +8,7 @@
 
 		drop if type == "Baseline Vignette"
 		keep if ///
-			(	  regexm(study,"China") ///
-				| regexm(study,"Delhi") ///
-			) ///
+			(	  regexm(study,"China")   | regexm(study,"Delhi") ) ///
 			& ///
 			(	  regexm(case,"Diarrhea") | regexm(case,"TB1") )
 
