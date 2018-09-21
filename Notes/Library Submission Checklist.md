@@ -1,6 +1,6 @@
 ### Data Visualization Library Submission Checklist
 
-## 1. Creat a folder that contains data necessary for code replication. The folder should contain data for only one type of visualization per folder.
+## 1. Create a folder that contains data necessary for code replication. The folder should contain data for only one type of visualization per folder.
 
 	Name of the folder should be the description of the visualization, 
 	e.g. "Scatter plot with fitted line", "Bar plot of two variables".
@@ -13,10 +13,10 @@ In the folder there should be:
 	- visualization output 			(conventionally: file name 		"figure.png"
 													 file format	"png"							)
 
-	- Any other file necessary for reprecation (ado, excel etc.)
+	- Any other file necessary for replication (ado, excel etc.)
 
 
-## 2. Stabdardize do.file direcotry
+## 2. Standardize do.file direcotry
 As all files are in one folder, do.file should first set the current directory. Then run commands from the current directory.
 
 --------------------------------
