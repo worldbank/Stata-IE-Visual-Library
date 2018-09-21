@@ -1,4 +1,4 @@
-* Figure: 10-25-50-75-90 perctile box plot
+* Figure: 10-25-50-75-90 percentile box plot
 
 		global graph_opts1 bgcolor(white) graphregion(color(white)) legend(region(lc(none) fc(none))) ///
 		ylab(,angle(0) nogrid) title(, justification(left) color(black) span pos(11)) subtitle(, justification(left) color(black))
