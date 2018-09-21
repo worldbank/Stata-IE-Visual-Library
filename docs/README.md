@@ -2,27 +2,30 @@
 
 ## [Bar plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots)
 
-### [Bar plot of two variables by treatment](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment)
+### [Bar plot of two variables](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment) *update link*
 
-![plot](https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png)
+![plot](https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png)*update link*
 
 ```stata
 # d;
-graph bar w_total_val_harvested_a w_total_val_inputs_a, 
-	  over(treated)		
-	  bargap(-30)
-	  legend(label(1 "Total Value Harvested")
-			 label(2 "Total Value Inputs"))
-	  bar (1, color("0 102 102") ) 
-	  bar (2, color("153  0 76") ) 
-	  ytitle ("Value in RWF")	
-	  title  ("Harvested value and Input Value")
-	  subtitle ("By treatment")
-	  note ("Note: Variables are winsorized at 0.01");
+		graph bar treat_correct, ///
+			over(type) asy bargap(20) over(study) over(case) nofill ///
+			blabel(bar, format(%9.2f)) ///
+			bgcolor(white) graphregion(color(white)) ///
+			legend(region(lc(none) fc(none))) ///
+			ylab(,angle(0) nogrid) ///
+			title(, justification(left) color(black) span pos(11)) ///
+			subtitle(, justification(left) color(black)) ///
+			bar(1 , lc(black) lw(thin) fi(100)) ///
+			bar(2 , lc(black) lw(thin) fi(100)) ///
+			legend(r(1) order(0 "Measurement:" 1 "Standardized Patient" 2 "Clinical Vignette")) ///
+			ytit("Providers ordering correct treatment {&rarr}", placement(bottom) justification(left)) ///
+			ylab($pct)
+
 # d cr
 ```
 
-### [Combined bar plots with two axes](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Combined%20bar%20plots%20with%20two%20axes)
+### [Combined bar plots with two axes]
 
 ![plot](https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png)
 
@@ -32,9 +35,9 @@ graph bar w_total_val_harvested_a w_total_val_inputs_a,
 foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sugar nut_pulse_seed spices other {
 	
 	if "`foodGroup'" == "animal"			local graphTitle Animal Sourced
-	if "`foodGroup'" == "fruit"			local graphTitle Fruit
-	if "`foodGroup'" == "grain"			local graphTitle Grain
-	if "`foodGroup'" == "veg"			local graphTitle Vegetables
+	if "`foodGroup'" == "fruit"				local graphTitle Fruit
+	if "`foodGroup'" == "grain"				local graphTitle Grain
+	if "`foodGroup'" == "veg"				local graphTitle Vegetables
 	if "`foodGroup'" == "starch"			local graphTitle Starchy Foods
 	if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
@@ -50,14 +53,13 @@ foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sug
 		title("`graphTitle'") xtitle("Month of Interview") ///
 		graphregion(color(white)) bgcolor(white) ///
 		legend(off) ///
-		name("`foodGroup'") 
-			
+		name("`foodGroup'") 		
 }
 
 * Combine graphs into one
 * -----------------------
 graph combine 	starch animal fruit grain processed_sugar veg, ///
-				graphregion(color(white)) plotregion(color(white))
+			graphregion(color(white)) plotregion(color(white))
 ```
 ###### Contribution: Paul Christian
 
@@ -80,7 +82,7 @@ twoway 	(kdensity revenue if post == 0, color(gs10)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-### [Shaded k-density function](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Density%20plots/Shaded%20k-density%20functions)
+### Shaded k-density function
 
 ![plot](https://user-images.githubusercontent.com/15252541/31140136-8eadf208-a841-11e7-85a9-54b8e35a6ad2.png)
 
@@ -106,12 +108,13 @@ twoway 	area x beta_ if rank>15 & beta_<(`r(p10)'), color(gs14) || ///
 
 ###### Contribution: Paul Christian
 
-## [Line plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Line%20plots)
-### [Fitted line with confidence intervals and text box](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Line%20plots/Fitted%20line%20with%20confidence%20interval%20and%20text%20box)
+## Line plots
+### Fitted line with confidence intervals and text box
 
 ![plot](https://user-images.githubusercontent.com/15252541/31257085-8bf019e6-aa04-11e7-8161-62159c7e8933.png)
 
 ```stata
+* Graph
 twoway 	(lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05)) ///
 	(lfitci y_hat x_var if post == 0, color(gs15)) /// 
 	(lfit	x_var x_var	if post == 1, color(red) lwidth(.5) lpattern(dash)) ///
@@ -127,8 +130,8 @@ twoway 	(lfitci y_hat x_var if post == 1, color("222 235 247") lwidth(.05)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-## [Maps](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Maps)
-### [Map displaying levels of a variable](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Maps/Map%20displaying%20levels%20of%20a%20variable)
+## Maps
+### Map displaying levels of a variable
 
 ![map](https://user-images.githubusercontent.com/15252541/31104861-ad015d6a-a7ad-11e7-8dcf-cd6b3220623e.png)
 
@@ -191,7 +194,7 @@ twoway 	(scatter revenue area_cult if post == 0, msize(vsmall) mcolor(gs14)) ///
 ```
 ###### Contribution: `@luizaandrade`
 
-### [Scatter plot with fitted line and confidence interval](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots/Scatter%20plot%20with%20fitted%20line%20and%20confidence%20interval)
+### Scatter plot with fitted line and confidence interval
 
 ![scatterplot2](https://user-images.githubusercontent.com/15252541/31103991-270f0464-a7a8-11e7-83a0-7edd4420c052.png)
 
@@ -217,7 +220,7 @@ graphregion(color(white)) bgcolor(white)
 ```
 ###### Contribution: `@marcelamello90`
 
-### [Scatter plot with polynomial smoothing and confidence interval](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots/Scatter%20plot%20with%20polynomial%20smoothing%20and%20confidence%20intervals)
+### Scatter plot with polynomial smoothing and confidence interval
 
 ![plot](https://user-images.githubusercontent.com/15252541/31467481-1bce0e0e-aea8-11e7-8839-ba38c2310212.png)
 
@@ -227,19 +230,20 @@ sum cons_pae_m_sine, det
 twoway scatter cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)' ///
 	|| lpolyci cons_pae_sd_sine cons_pae_m_sine if cons_pae_m_sine < `r(p99)', ///
 	legend(off) /// 
-	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) /// 		m-hat
-	ytitle("`=ustrunescape("\u0073\u0302")'" " ", size(large)) /// 		s-hat 
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) /// 									m-hat
+	ytitle("`=ustrunescape("\u0073\u0302")'" " ", size(large)) /// 									s-hat 
 	xlabel(50 "50" 100 "100" 150 "150" 200 "200") ///	
 	graphregion(color(white)) bgcolor(white) ///
 	name(s_by_mhat)
+
 
 ***Create Second Graph
 sum cons_pae_m_sine, det
 twoway scatter cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)' ///
 	|| lpolyci cv cons_pae_m_sine if cons_pae_m_sine<`r(p99)' & cons_pae_m_sine>`r(p1)', ///
 	mcolor(maroon) ///
-	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) /// 	s-hat/m-hat
-	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///					m-hat
+	ytitle("`=ustrunescape("\u0073\u0302/\u006D\u0302")'" " ", size(large)) /// 					s-hat/m-hat
+	xtitle(" " "`=ustrunescape("\u006D\u0302")'", size(large)) ///									m-hat
 	legend(order(2 3) label(3 "Local Poly.") label(2 "95% CI")) ///
 	graphregion(color(white)) bgcolor(white) ///
 	name(cv_by_mhat)

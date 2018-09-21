@@ -1,9 +1,11 @@
-	
+*Figure: Shaded k-density functions
+
 	* Packages required
 	ssc install akdensity
 
 	* Load data 
-	use "$VisLib\Density plots\Shaded k-density functions\data.dta", replace
+	cd "{directory}"
+	use "data.dta", replace
 	
 	* Create variable used for graph
 	sort beta_
@@ -36,4 +38,6 @@
 	bgcolor(white) graphregion(color(white))
 	
 	* Save
-	graph export "$VisLib\Density plots\Shaded k-density functions\plots.png", as(png) replace
+	graph export "figure.png", as(png) replace
+
+* Have a lovely day!

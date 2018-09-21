@@ -1,3 +1,4 @@
+* Maps displaying levels of a variable
 
 * ------------------------------------------------------------------------------
 * 	Packages
@@ -10,7 +11,7 @@
 * 	Data
 * ------------------------------------------------------------------------------
 
-	cd "$VisLib\Maps\Map displaying levels of a variable"
+	cd "{directory}"
 
 	*Shapefiles 
 	cap erase world_shape.dta
@@ -46,3 +47,5 @@
 	note("Source: World Values Survey (2014 or last available year)") ///
 	saving(map, replace)
 	graph export map.png, as(png)  replace
+
+* Have a lovely day!
