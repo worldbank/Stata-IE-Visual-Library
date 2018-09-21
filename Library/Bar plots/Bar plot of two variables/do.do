@@ -8,9 +8,7 @@
 
 		drop if type == "Baseline Vignette"
 		keep if ///
-			(	  regexm(study,"China") ///
-				| regexm(study,"Delhi") ///
-			) ///
+			(	  regexm(study,"China")   | regexm(study,"Delhi") ) ///
 			& ///
 			(	  regexm(case,"Diarrhea") | regexm(case,"TB1") )
 
@@ -26,8 +24,6 @@
 		replace case = "Diarrhea (ORS)" if regexm(case,"Diarrhea")
 		replace case = "Tuberculosis (AFB or CXR)" if regexm(case,"TB1")
 		replace study = `""Madhya" "Pradesh""' if regexm(study,"Madhya Pradesh")
-
-		drop if child == 1
 
 		keep study case type treat_correct
 
