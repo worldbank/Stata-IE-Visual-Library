@@ -2,8 +2,8 @@
 
 ## [Bar plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots)
 
-[<img src="https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png" width="200">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment)
-[<img src="https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png" width="200">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Combined%20bar%20plots%20with%20two%20axes)
+[<img src="https://user-images.githubusercontent.com/15252541/30933373-67fafece-a398-11e7-84f3-c2294cd9f3de.png" width="215">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Bar%20plot%20of%20two%20variables%20by%20treatment)
+[<img src="https://user-images.githubusercontent.com/15252541/31467170-1a358f78-aea7-11e7-85f7-0c152ad2c391.png" width="215">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Bar%20plots/Combined%20bar%20plots%20with%20two%20axes)
 
 ## [Density plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Density%20plots)
 
