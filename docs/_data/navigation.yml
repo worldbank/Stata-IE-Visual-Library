@@ -1,4 +1,19 @@
 docs:
-  - title: "Bar plots"
-	  url: https://worldbank.github.io/Stata-IE-Visual-Library/#bar-plots
+  - title: Bar plots
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#bar-plots
 	
+  - title: Density plots
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#density-plots
+    
+  - title: Line plots
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#line-plots
+   
+  - title: Maps
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#maps
+    
+  - title: RD plots
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#rd-plots
+    
+  - title: Scatter plots
+    url: https://worldbank.github.io/Stata-IE-Visual-Library/#scatter-plots
+
