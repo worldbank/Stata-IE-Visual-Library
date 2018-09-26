@@ -26,7 +26,9 @@
 			3 `""Case 2" "(200/601)""' 4 `""Case 2" "(401/601)""' , modify
 	
 	tabgen med_b2_antister_cat
-	
+*ado file: splits cat var into binaries and correctly labels each cat
+
+
 	graph bar med_b2_antister_cat?? ///
 		if dr_3 == 1 ///
 		, stack over(checkgroup) nofill ///
