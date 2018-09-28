@@ -11,12 +11,6 @@
 		drop if country == "Tanzania-2014"
 		replace country = "Tanzania" if country == "Tanzania-2016"
 
-	* Proportions of medical officers < kenyan nurse mean
-
-		qui su competence_mle if country == "Kenya" & provider_cadre == 3 , d
-			local theNurses = `r(mean)'	// .553483
-			gen check = competence_mle < 0.553483
-
 	* Graph (10-25-50-75-90 pctiles)
 
 		collapse (p10) p10=competence_mle (p25) p25=competence_mle (p50) p50=competence_mle ///

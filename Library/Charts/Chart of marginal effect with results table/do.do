@@ -18,3 +18,9 @@
 	
 				
 * Have a lovely day!
+* set the yhat constant, and re-sample error via bootstrap and add that to the yhat with randomly assigned error to calculate more accurate noise pattern 
+
+
+*Power calculation: 
+* wanna
+

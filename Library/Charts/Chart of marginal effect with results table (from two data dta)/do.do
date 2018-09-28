@@ -7,7 +7,7 @@
 		yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
 
-	cd "{directory}"
+	cd "C:\Users\Saori\Documents\Github\Stata-IE-Visual-library-fork\Library\Charts\Chart of marginal effect with results table (from two data dta)"
 	
 	qui do "chartable.ado"
 
