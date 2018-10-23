@@ -10,7 +10,7 @@
 	
 	* Create individual graphs
 	* ------------------------
-	foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sugar nut_pulse_seed spices other {
+	foreach foodGroup in animal fruit grain veg starch processed_sugar {
 		
 		if "`foodGroup'" == "animal"			local graphTitle Animal Sourced
 		if "`foodGroup'" == "fruit"				local graphTitle Fruit
@@ -19,7 +19,7 @@
 		if "`foodGroup'" == "starch"			local graphTitle Starchy Foods
 		if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
-		twoway 	bar number_group x if food_group=="`foodGroup'", ///
+		qui twoway 	bar number_group x if food_group=="`foodGroup'", ///
 				yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
 				barwidth(.9) fintensity(inten0) lcolor(black) /// 
 				xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
