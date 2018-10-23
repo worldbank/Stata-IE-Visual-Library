@@ -8,6 +8,7 @@
 # file) that we do not want to ignore
 !.gitignore
 !.gitattributes
+!*.md
 
 #######################
 # For performance reasons, if a folder is already ignored, then 
