@@ -33,7 +33,7 @@
 	replace crop = subinstr(crop, "_", " ",.) 
 	replace crop = subinstr(crop, "w", " ",.)
 	
-	* Insert the list of values in the local macro macname 
+	* Inserting the list of values in the local macro macname 
 	forvalues j = 1/3 {
 		levelsof crop if _n==`j', local(crop`j')
 	}
