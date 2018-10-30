@@ -17,10 +17,6 @@
 
 	cap mat drop theResults
 
-	egen sp_city_id = group(city sp_id)
-	egen sp_city_mbbs = group(city type_formal case)
-	egen fac = group(facilitycode providerid)
-
 	local x = 0
 	qui foreach var of varlist ///
 		correct treat_cxr re_3 re_4 treat_refer ///
