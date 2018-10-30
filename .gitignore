@@ -24,6 +24,9 @@
 # located unless that folder is explicitly ignored. See example
 # with EncryptedData folder below. 
 
+# yml
+!*/**/*.yml
+
 # GitKeep
 !*/**/GitKeep.txt
 

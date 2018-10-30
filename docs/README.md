@@ -157,24 +157,11 @@ graph export map.png, as(png)  replace
 ```
 ###### Contribution: `@marcelamello90`
 
+[<img src="https://user-images.githubusercontent.com/15252541/31104861-ad015d6a-a7ad-11e7-8dcf-cd6b3220623e.png" width="225">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Maps/Map%20displaying%20levels%20of%20a%20variable)
 
 ## [RD plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots)
-### [Regression discontinuity plot with confidence intervals](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots/Regression%20discontinuity%20plots%20with%20confidence%20intervals)
 
-![rdplot1](https://user-images.githubusercontent.com/15252541/30933351-576483a0-a398-11e7-84d1-0b143f353578.png)
-
-```stata
-twoway  (lpolyci tmt_status pmt_score if pmt_score < `cutoff', clcolor(navy) acolor(gs14)) ///
-	(lpolyci tmt_status pmt_score if pmt_score > `cutoff', clcolor(navy) acolor(gs14)), ///
-	xline(`cutoff', lcolor(red) lwidth(vthin) lpattern(dash)) ///
-	ytitle(Probability of receiving treatment) ///
-	xtitle(Proxy means test score) ///
-	legend(off) ///
-	bgcolor (white) graphregion(color(white))  ///
-	note("Note: gray area is 95% confidence interval.")
-```
-###### Contribution: `@luizaandrade`
-
+[<img src="https://user-images.githubusercontent.com/15252541/30933351-576483a0-a398-11e7-84d1-0b143f353578.png" width="225">](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/RD%20plots/Regression%20discontinuity%20plots%20with%20confidence%20intervals)
 
 ## [Scatter plots](https://github.com/worldbank/Stata-IE-Visual-Library/tree/master/Library/Scatter%20plots)
 
@@ -257,3 +244,4 @@ grc1leg s_by_mhat cv_by_mhat, ///
 ```
 ###### Contribution: Paul Christian
 
+<!--- [<img src="" width="225">]() -->
