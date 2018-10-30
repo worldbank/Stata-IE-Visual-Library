@@ -4,7 +4,7 @@
 	cd "{directory}"
 	use "data.dta", clear
 	
-	* Treament effect															
+	* Treament effect
 	reg 	y_var x_var post x_var_post control
 	
 	* Save coefficients for graph
