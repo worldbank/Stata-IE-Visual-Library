@@ -8,17 +8,7 @@
 	qui do "betterbar.ado"	
 
 	use "data.dta" , clear
-		
-	label var as_correct "Asthma: Inhaler/Bronchodilator"
-	label var ch_correct "Child Diarrhoea: ORS"
-	label var cp_correct "Chest Pain: Referral/Aspirin/ECG"
-	label var tb_correct "Tuberculosis: AFB Smear"
 
-	 recode facility_type (3/5 = 3)
-	 
-	 label def facility_type 1 "Public" 2 "Private For-Profit" 3 "Private FBO/SFO", modify
-		label val facility_type facility_type
-	 
 	 betterbar ///
 		??_correct  checklist  refer med_any  med_class_any_6 med_class_any_16 ///
 		, $graph_opts over(facility_type) xlab(${pct}) barlab(mean) legend(r(1) symxsize(small) symysize(small))
