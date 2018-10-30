@@ -2,7 +2,7 @@
 
 	global graph_opts1 ///
 		title(, justification(left) color(black) span pos(11)) ///
-		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
+		graphregion(color(white) lc(white) la(center)) /// <- remove la(center) for Stata < 15
 		ylab(,angle(0) nogrid)  ///
 		yscale(noline) legend(region(lc(none) fc(none)))
 
