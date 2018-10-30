@@ -19,7 +19,7 @@
 
 		use "data2.dta" , clear
 
-		*Data manipulation: Making data have the same variables
+		*Data manipulation: Making data have the three variables
 		gen hours = tottime/60
 		drop tottime
 
