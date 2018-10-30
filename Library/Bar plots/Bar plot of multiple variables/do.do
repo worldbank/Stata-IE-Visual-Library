@@ -1,6 +1,6 @@
 *Figure: Bar plot of multiple variables
 
-*	cd "{directory}"
+	cd "{directory}"
 	use "data.dta", clear
 
 	* We will create mean of all crop observations across each "treatment_group, baseline, and midline category.
