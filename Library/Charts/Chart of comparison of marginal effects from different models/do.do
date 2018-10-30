@@ -5,12 +5,7 @@
 	cd "{directory}"
 
 	use "data.dta" , clear
-		
-	label var as_correct "Asthma: Inhaler/Bronchdilator"
-	label var ch_correct "Child Diarrhea: ORS"
-	label var cp_correct "Chest Pain: Referral/Aspirin/ECG"
-	label var tb_correct "Tuberculosis: AFB Smear"
-	
+
 	cap mat drop theResults
 	local theLabels ""
 	local x = 15.5
