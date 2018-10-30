@@ -13,21 +13,7 @@
 	version 13
 	cd "{directory}"
 
-	qui do "tabgen.ado"
-	
 	use "data.dta", clear
-	
-	gen n = 1 
-	
-	replace med_b2_antister_cat = 5 if med == 0
-	
-	egen checkgroup = group(case dr_3), label
-		label def checkgroup 1 `""Case 1" "(503/599)""' 2 `""Case 1" "(96/599)""' ///
-			3 `""Case 2" "(200/601)""' 4 `""Case 2" "(401/601)""' , modify
-	
-	tabgen med_b2_antister_cat
-*ado file: splits cat var into binaries and correctly labels each cat
-
 
 	graph bar med_b2_antister_cat?? ///
 		if dr_3 == 1 ///
