@@ -16,9 +16,6 @@
 	qui do "betterbar.ado"
 
 	use "data.dta", clear
-	
-	replace cp_1 = proper(cp_1)
-	encode cp_1, gen(city)
 
 	betterbar ///
 		(dr_3 correct_treatment)  ///

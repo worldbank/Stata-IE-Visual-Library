@@ -2,25 +2,16 @@
 
 	global graph_opts ///
 		title(, justification(left) color(black) span pos(11)) ///
-		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
+		graphregion(color(white) lc(white) la(center)) /// <- remove la(center) for Stata < 15
 		ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
 		yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
 
-	cd "C:\Users\Saori\Documents\Github\Stata-IE-Visual-library-fork\Library\Charts\Chart of marginal effect with results table (from two data dta)"
+	cd "{directory}"
 	
 	qui do "chartable.ado"
 
 	use "data.dta" , clear
-
-		keep if (case == 3 | case == 1)
-
-		bys facilitycode providerid : egen casemax = max(case)
-		bys facilitycode providerid : egen casemin = min(case)
-		keep if (casemax == 3 & casemin == 1)
-		egen fac = group (facilitycode providerid)
-
-		label def case 1 "Case 1" 2 "Case 2" 3 "Case 3" 4 "Case 4" , modify
 
 		chartable ///
 			correct treat_cxr re_3 re_4 treat_refer med_any med_l_any_1 med_l_any_2 med_l_any_3  med_k_any_9  ///
@@ -29,9 +20,6 @@
 		graph save "Fig_4_1.gph" , replace
 
 	use "data2.dta" , clear
-
-		label def sp4_spur_1 0 "Ordinary Case 4" 1 "Case 4 w/Sputum Report"
-			label val sp4_spur_1 sp4_spur_1
 
 		chartable ///
 			correct treat_cxr re_3 re_4 treat_refer med_any med_l_any_1 med_l_any_2 med_l_any_3  med_k_any_9  ///

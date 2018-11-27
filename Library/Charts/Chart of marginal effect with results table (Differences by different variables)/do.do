@@ -2,12 +2,12 @@
 
 	global graph_opts ///
 		title(, justification(left) color(black) span pos(11)) ///
-		graphregion(color(white) lc(white) lw(med) la(center)) /// <- remove la(center) for Stata < 15
+		graphregion(color(white) lc(white) la(center)) /// <- remove la(center) for Stata < 15
 		ylab(,angle(0) nogrid) xtit(,placement(left) justification(left)) ///
 		yscale(noline) xscale(noline) legend(region(lc(none) fc(none)))
 
 	global comb_opts ///
-		graphregion(color(white) lc(white) lw(med) la(center))
+		graphregion(color(white) lc(white) la(center))
 
 
 	cd "{directory}"
