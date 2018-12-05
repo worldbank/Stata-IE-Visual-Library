@@ -1,4 +1,4 @@
 site_name: Stata Visual Library
 
 theme:
-  name: 'cinder'
+  name: 'material'
