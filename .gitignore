@@ -1,9 +1,4 @@
 #######################
-# Start by ignoring everything, and below we are explicitly saying 
-# what to not ignore
-*
-
-#######################
 # List files in the top folder (same folder as this .gitignore 
 # file) that we do not want to ignore
 !.gitignore
@@ -24,8 +19,10 @@
 # located unless that folder is explicitly ignored. See example
 # with EncryptedData folder below. 
 
-# yml
-!*/**/*.yml
+# Page
+!Pages/**/**
+*.yml
+*.html
 
 # GitKeep
 !*/**/GitKeep.txt
