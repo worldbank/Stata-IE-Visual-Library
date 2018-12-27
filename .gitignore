@@ -41,6 +41,8 @@
 !Library/**/*.dbf
 !Library/**/*.prj
 
+# Images
+!Library/**/*.png
 
 # Include some additional file formats in any output folder
 !docs/*.md
