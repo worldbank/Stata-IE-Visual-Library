@@ -1,2 +1,0 @@
-This file is only a placeholder file so that GitHub syncs empty folders!
-If files have been added to the folder of this file so that this file is no longer the only file in this folder, then this file may be deleted.

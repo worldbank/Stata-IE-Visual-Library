@@ -1,15 +1,16 @@
-
+* Figure: combined bar plots with two axes
 
 	* Load data
 	* ---------
-	use "$VisLib\Bar plots\Combined bar plots with two axes\data.dta", clear
+	cd "{directory}"
+	use "data.dta", clear
 	
 	* Adjust variable for bar position
 	gen x = int1mo+.5
 	
 	* Create individual graphs
 	* ------------------------
-	foreach foodGroup in animal fruit grain fats veg starch beverages  processed_sugar nut_pulse_seed spices other {
+	foreach foodGroup in animal fruit grain veg starch processed_sugar {
 		
 		if "`foodGroup'" == "animal"			local graphTitle Animal Sourced
 		if "`foodGroup'" == "fruit"				local graphTitle Fruit
@@ -18,7 +19,7 @@
 		if "`foodGroup'" == "starch"			local graphTitle Starchy Foods
 		if "`foodGroup'" == "processed_sugar"	local graphTitle Processed/Sugar
 
-		twoway 	bar number_group x if food_group=="`foodGroup'", ///
+		qui twoway 	bar number_group x if food_group=="`foodGroup'", ///
 				yaxis(1) ytitle("Avg. Number of Foods from" "Group Consumed Last Month", axis(1)) ///
 				barwidth(.9) fintensity(inten0) lcolor(black) /// 
 				xlabel(0 "0" 3 "3" 6 "6" 9 "9" 12 "12") ///
@@ -41,4 +42,6 @@
 					
 	* Save
 	* ----
-	graph export "$VisLib\Bar plots\Combined bar plots with two axes\plot.png", as(png) replace
+	graph export "figure.png", as(png) replace
+
+* Have a lovely day!
