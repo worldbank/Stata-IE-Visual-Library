@@ -30,8 +30,19 @@
 # GitKeep
 !*/**/GitKeep.txt
 
+# Stata
+!Library/**/*.do
+!Library/**/*.ado
+!Library/**/*.dta
+
+# Shapefiles
+!Library/**/*.shp
+!Library/**/*.shx
+!Library/**/*.dbf
+!Library/**/*.prj
+
 # Images
-!*/**/*.png
+!Library/**/*.png
 
 # Include some additional file formats in any output folder
 !docs/*.md
