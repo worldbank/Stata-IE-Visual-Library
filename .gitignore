@@ -1,7 +1,46 @@
 #######################
-# Start by ignoring everything, and below we are explicitly saying 
-# what to not ignore
-*/ado files
-*/Library/**/**
-!*/Library/**/**/*.png
+# List files in the top folder (same folder as this .gitignore 
+# file) that we do not want to ignore
+!.gitignore
+!.gitattributes
+!*.md
 
+#######################
+# For performance reasons, if a folder is already ignored, then 
+# GitHub does not check the content for that folder for matches
+# with additional rules. The line below includes folder in the 
+# top folder (but not their content), so that anything mathcing 
+# the rules below will still not be ignored.
+!*/
+
+#######################
+# The following file types are code that should always be 
+# included no matter where in the DataWork folder they are 
+# located unless that folder is explicitly ignored. See example
+# with EncryptedData folder below. 
+
+# Page
+!Pages/**/**
+*.yml
+*.html
+
+# GitKeep
+!*/**/GitKeep.txt
+
+# Stata
+!Library/**/*.do
+!Library/**/*.ado
+!Library/**/*.dta
+
+# Final plots
+!Library/**/*.png
+
+# Shapefiles
+!Library/**/*.shp
+!Library/**/*.shx
+!Library/**/*.dbf
+!Library/**/*.prj
+
+
+# Include some additional file formats in any output folder
+!docs/*.md
