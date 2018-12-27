@@ -34,6 +34,9 @@
 !Library/**/*.ado
 !Library/**/*.dta
 
+# Final plots
+!Library/**/*.png
+
 # Shapefiles
 !Library/**/*.shp
 !Library/**/*.shx
