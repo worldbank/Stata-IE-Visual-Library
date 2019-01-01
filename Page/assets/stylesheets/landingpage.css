@@ -126,18 +126,18 @@ nav{
 	list-style-type: none;
 	float: center;
 }
-
 #subnavbar li{
 	display: inline;
-	padding: 0px 55px;
+	padding: 0% 4%;
 }
 
 #subnavbar li:first-child{
-	padding: 0px 55px 0px 0px;
+	padding: 0% 4% 0% 0%;
 }
 #subnavbar li:last-child{
-	padding: 0px 0px 0px 55px;
+	padding: 0% 0% 0% 4%;
 }
+
 
 #subnavbar a{
 	font: 13px Verdana, sans-serif;
