@@ -139,6 +139,13 @@ nav{
 	justify-content: center;
 	align-content: center;
 }
+
+img:hover{
+	transform: scale(2.5);
+	z-index: 9999;
+	position:relative
+}
+
 .plot-row {
   display: flex;
 }
