@@ -1,0 +1,145 @@
+div{
+	display: block;
+}
+
+body header{
+	direction: ltr;
+}
+ 
+header{
+	background: #0071bc;
+    color: #fff;
+	padding: 5px 0px 65px 0px;
+}
+
+
+#main-title a{
+	text-decoration: none;
+	float: left;
+    font: 35px Verdana;
+	color: #fff;
+	background: #0071bc;
+	line-height: 60px;
+	justify-content: center;
+}
+
+.container{
+	width: 75%;
+	margin: auto;
+}
+
+.subpages{
+	width: 74%;
+	float: right;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+
+/************************* SIDEBAR ****************************/
+#sidebar{
+	font: 14px Verdana;
+	width:18.75%;
+	background-color:#ededed;
+	color:#333;
+	left:12.5%;
+	top: 180px;
+	box-sizing: border-box;
+	position: fixed;
+}
+
+#sidebar a{
+	text-decoration: none;
+	color: #0071bc;	
+}
+
+#sidebar p{
+	padding-bottom: 10px;
+}
+
+#sidebar h3{
+	font: 15px Verdana;
+	font-weight: bold;
+}
+
+
+#links a{
+	text-decoration: none;
+	color: #333;
+}
+
+/****************** MAIN NAVIGATION BAR **********************/
+
+nav{
+	background: #ededed;
+    color: #fff;
+	padding: 5px 0px 5px 0px;
+	float: center;
+}
+	
+#navbar{
+	float: right;
+}
+
+#navbar ul{
+ 	text-transform: uppercase;
+	list-style-type: none;
+	padding-top: 10px;
+}
+
+#navbar li{
+	display: inline;
+	padding: 0px 15px;
+}
+
+#navbar a{
+	font: 15px Verdana;
+	color: #fff;
+	text-decoration: none;
+	background: #0071bc;
+}
+
+/************ SECONDARY NAVIGATION BAR *****************/
+
+#subnavbar ul{
+ 	text-transform: uppercase;
+	list-style-type: none;
+	float: center;
+}
+
+#subnavbar li{
+	display: inline;
+	padding: 0% 4%;
+}
+
+#subnavbar li:first-child{
+	padding: 0% 4% 0% 0%;
+}
+#subnavbar li:last-child{
+	padding: 0% 0% 0% 4%;
+}
+
+#subnavbar a{
+	font: 13px Verdana, sans-serif;
+	color: #333;;
+	text-decoration: none;
+}
+
+
+/********************* LINKS/IMAGES ************************/
+.plot-row {
+	text-align: center;
+	display: flex;
+}
+
+.plot-row a{
+	text-decoration: none;
+}
+
+.plot-box{
+	height: auto;
+	position: relative;
+	margin: 15px;
+	justify-content: center;
+	align-content: center;
+}

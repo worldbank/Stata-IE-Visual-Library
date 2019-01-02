@@ -1,56 +1,7 @@
-.container{
-	width: 75%;
-	margin: auto;
-}
-
-.subpages{
-	width: 75%;
-	float:right;
-	padding:15px;
-	box-sizing: border-box;
-}
-
-#sidebar a{
-	text-decoration: none;
-	color: #0071bc;	
-}
-
-#sidebar{
-	font: 14px Verdana;
-	float:left;
-	width:25%;
-	background-color:#ededed;
-	color:#333;
-	padding:25px;
-	margin: 40px 0px;
-	box-sizing: border-box;
-	position: relative;
-}
-
-#sidebar p{
-	padding-bottom: 10px;
-}
-
-#sidebar h3{
-	font: 15px Verdana;
-	font-weight: bold;
-}
-
-
-#links a{
-	text-decoration: none;
-	color: #333;
-}
-
-
-div{
-	display: block;
-}
-
-body header footer{
-	direction: ltr;
-}
  
+
+/************* FOOTER ******************************/
+
  footer{
 	position: fixed;
 	bottom: 0;
@@ -64,15 +15,6 @@ body header footer{
 	padding-bottom: 20px;
  }
  
-header{
-	top: 0;
-	left: 0;
-	right: 0;
-	background: #0071bc;
-    color: #fff;
-	padding: 5px 0px 65px 0px;
-}
-
 #footer-text{
 	background-color: #333;
 	float: center;
@@ -84,66 +26,6 @@ header{
 	color: #fff;
 }
 
-#main-title{
-	float: left;
-    font: 35px Verdana;
-	color: #fff;
-	background: #0071bc;
-	line-height: 60px;
-}
-
-#navbar{
-	float: right;
-	padding: 5px 0px 0px 0px;
-}
-
-#navbar ul{
- 	text-transform: uppercase;
-	list-style-type: none;
-}
-
-#navbar li{
-	display: inline;
-}
-
-#navbar a{
-	font: 15px Verdana;
-	color: #fff;
-	text-decoration: none;
-	padding: 0px 10px;
-	background: #0071bc;
-}
-
-nav{
-	background: #ededed;
-    color: #fff;
-	padding: 5px 0px 5px 0px;
-	float: center;
-}
-
-#subnavbar ul{
- 	text-transform: uppercase;
-	list-style-type: none;
-	float: center;
-}
-#subnavbar li{
-	display: inline;
-	padding: 0% 4%;
-}
-
-#subnavbar li:first-child{
-	padding: 0% 4% 0% 0%;
-}
-#subnavbar li:last-child{
-	padding: 0% 0% 0% 4%;
-}
-
-
-#subnavbar a{
-	font: 13px Verdana, sans-serif;
-	color: #333333;
-	text-decoration: none;
-}
 
 h1{
 	text-align: center;
@@ -155,20 +37,9 @@ h1{
     margin-top: 14px;
 }
 
+/*************** IMAGES *******************/
+
 .plot-box{
 	width: 25%;
 	max-width: 300px;
-	height: auto;
-	position: relative;
-	margin: 10px;
-	justify-content: center;
-	align-content: center;
-}
-.plot-row {
-	text-align: center;
-	display: flex;
-}
-
-.plot-row a{
-	text-decoration: none;
 }
