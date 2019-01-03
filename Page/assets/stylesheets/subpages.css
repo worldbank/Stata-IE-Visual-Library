@@ -1,0 +1,28 @@
+
+h1{
+	text-align: center;
+	color: #333;
+	padding: 20px 5px;
+	font: 30px bold Verdana, sans-serif;
+	border-bottom: 1px solid #d7d7d7;
+	font-weight: bold;
+    margin-top: 14px;
+	background-color: #fff;
+}
+
+
+
+/*************** IMAGES *******************/
+.plot-box{
+	width: 30%;
+	border: 1px solid #ededed;
+
+}
+
+/* Zoom images on hover */
+img:hover{
+	transform: scale(2.5);
+	z-index: 9999;
+	position:relative
+}
+
