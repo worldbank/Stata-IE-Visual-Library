@@ -40,12 +40,13 @@ header{
 #sidebar{
 	font: 14px Verdana;
 	width:18.75%;
-	background-color:#ededed;
+	background-color:#fff;
 	color:#333;
 	left:12.5%;
 	top: 180px;
 	box-sizing: border-box;
 	position: fixed;
+	padding: 15px;
 }
 
 #sidebar a{
