@@ -29,7 +29,7 @@ header{
 }
 
 .subpages{
-	width: 74%;
+	width: 75%;
 	float: right;
 	margin: 0px;
 	box-sizing: border-box;
@@ -38,7 +38,7 @@ header{
 
 /************************* SIDEBAR ****************************/
 #sidebar{
-	font: 14px Verdana;
+	font: 12px Verdana;
 	width:18.75%;
 	background-color:#fff;
 	color:#333;
@@ -94,7 +94,7 @@ nav{
 }
 
 #navbar a{
-	font: 15px Verdana;
+	font: 12px Verdana;
 	color: #fff;
 	text-decoration: none;
 	background: #0071bc;
@@ -121,7 +121,7 @@ nav{
 }
 
 #subnavbar a{
-	font: 13px Verdana, sans-serif;
+	font: 11px Verdana, sans-serif;
 	color: #333;;
 	text-decoration: none;
 }
