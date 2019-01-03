@@ -144,3 +144,7 @@ nav{
 	justify-content: center;
 	align-content: center;
 }
+
+img{
+	width: 100%;
+}
