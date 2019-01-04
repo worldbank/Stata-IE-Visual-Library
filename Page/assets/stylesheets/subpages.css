@@ -21,7 +21,7 @@ h1{
 
 /* Zoom images on hover */
 img:hover{
-	transform: scale(2.5);
+	transform: scale(2);
 	z-index: 9999;
 	position:relative
 }
