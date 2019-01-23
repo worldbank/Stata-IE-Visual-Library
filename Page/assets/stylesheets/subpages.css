@@ -15,14 +15,25 @@ h1{
 /*************** IMAGES *******************/
 .plot-box{
 	width: 30%;
-	border: 1px solid #ededed;
-
+	border: 0px solid #ededed;
+	display: flex;
+	position:relative
 }
 
 /* Zoom images on hover */
-img:hover{
+.plot-box:hover{
 	transform: scale(2);
 	z-index: 9999;
 	position:relative
 }
 
+img{
+	width: 100%;
+	: 100%;
+}
+
+iframe{
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+}
