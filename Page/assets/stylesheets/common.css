@@ -5,7 +5,7 @@ div{
 body header{
 	direction: ltr;
 }
- 
+
 header{
 	background: #0071bc;
     color: #fff;
@@ -51,7 +51,7 @@ header{
 
 #sidebar a{
 	text-decoration: none;
-	color: #0071bc;	
+	color: #0071bc;
 }
 
 #sidebar p{
@@ -77,9 +77,10 @@ nav{
 	padding: 5px 0px 5px 0px;
 	float: center;
 }
-	
+
 #navbar{
 	float: right;
+	position: relative;
 }
 
 #navbar ul{
@@ -102,28 +103,31 @@ nav{
 
 /************ SECONDARY NAVIGATION BAR *****************/
 
-#subnavbar ul{
- 	text-transform: uppercase;
-	list-style-type: none;
-	float: center;
+#subnavbar .plot-row {
+	text-align: center;
+	display: flex;
 }
 
 #subnavbar li{
 	display: inline;
 	padding: 0% 4%;
+	position: relative;
 }
 
 #subnavbar li:first-child{
 	padding: 0% 4% 0% 0%;
+	position:relative;
 }
 #subnavbar li:last-child{
 	padding: 0% 0% 0% 4%;
+	position:relative;
 }
 
 #subnavbar a{
 	font: 11px Verdana, sans-serif;
 	color: #333;;
 	text-decoration: none;
+	position:relative;
 }
 
 
