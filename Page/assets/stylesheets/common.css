@@ -111,7 +111,8 @@ nav{
 #subnavbar .link-box {
 	width: 100%;
 	display: flex;
-	position:relative;
+	padding: 0% 5%;
+	position: relative;
 }
 
 #subnavbar li{
