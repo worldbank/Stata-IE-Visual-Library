@@ -1,28 +1,5 @@
 * Figure: Quantile treatment effect by gender
 	
-	use "analysis_studentlevel.dta", clear
-			
-	keep if grade == 6 & pool_6EF == 1
-	keep inep prof_media school_treated student_matricula  student_gender  polo
-		
-	rename inep school_id
-	rename student_matricula student_id
-	rename prof_media student_average_std
-	rename polo school_strata
-	
-	lab var school_id "School ID"
-	lab var student_id "Student ID"
-	lab var student_average_std "Student average test score - z-score"
-	lab var school_treated "Treatment"
-	lab var school_strata  "Strata"
-	
-	sort  school_id student_id student_average
-	order school_id student_id student_average_std student_gender school_treated school_strata
-		
-	drop if mi(student_gender) | mi(student_average_std)
-	lab data "Student Standardized Test Scores"
-	
-	
 	* PREPARE DATA
 	* ------------
 	
@@ -31,7 +8,7 @@
 	ssc   install coefplot , replace
 	
 	* Load data
-	cd    "C:\Users\WB527265\Documents\GitHub\Stata-IE-Visual-Library\Library\Regression coefficients\Quantile treatment effect"	
+	cd	  "{directory}"
 	use	  "data.dta"	   , clear
 	
 	* Generate dummies for strata (factor variables do not work in 'qreg2')
@@ -73,7 +50,7 @@
 				if student_gender == `genderDummy'							///
 				 , q(`roundQuantile') cl(school_id)
 				
-				local modelsList `"`modelsList' (est_q`integerQuantile'_`genderLab', ciopts(recast(rcap) lcolor(`lineColor')) mcolor(`lineColor') ) "'
+				local modelsList `"`modelsList' (est_q`integerQuantile'_`genderLab', ciopts(recast(rcap) lcolor("`lineColor'")) mcolor("`lineColor'") ) "'
 		}
 			
 		local quantileCount  =  0.1 + 		    `quantileCount'
@@ -86,17 +63,23 @@
 	
 	#d	;
 	
-		coefplot `modelsList',			
-			vertical keep(*school_treated*) bycoefs
-			mlabel mlabcolor(black) format(%9.2g) msymbol(diamond)
+		coefplot `modelsList',
+		
+			keep(*school_treated*)
+			vertical bycoefs
+			mlab mlabcolor(black) format(%9.2g) msymbol(diamond)
 			levels(`statSignLevel')
-			xlab(none) xlabel(`quantileLabels', add)
+			
+			
+			
+			   title("Quantile Treatment Effect")
+			subtitle("Average Test Score")
+			  ytitle("Standard deviations")
+			  yline(0, lstyle(foreground))
+			  xlab(none) xlabel(`quantileLabels', add)
+			
 			legend(order(2 4) lab(2 "Female") lab(4 "Male"))
-			   title("Quantile treatment effect")
-			subtitle("By student gender")
-			ytitle("Standard deviations")
-			yline(0, lstyle(foreground))
-			note("{bf:Note:} Estimates of quantile regression with strata fixed effects and standard errors clustered"
+			note("{bf:Note:} Estimates of quantile regressions with strata fixed effects and standard errors clustered"
 				 "at the school level. Confidence intervals are `statSignLevel'%.")
 			graphregion(color(white))
 		;
