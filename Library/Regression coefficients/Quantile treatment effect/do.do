@@ -8,7 +8,7 @@
 	ssc   install coefplot , replace
 	
 	* Load data
-	cd    "C:\Users\WB527265\Documents\GitHub\Stata-IE-Visual-Library\Library\Regression coefficients\Quantile treatment effect"	
+	cd	  "{directory}"	
 	use	  "data.dta"	   , clear
 	
 	* Generate dummies for strata (factor variables do not work in 'qreg2')
