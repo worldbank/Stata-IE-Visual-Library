@@ -1,12 +1,17 @@
 * Figure:  Venn diagram
-    ** Install venndiag by searching this demand in the search bar and click install
+    ** Install pvenn by searching this demand in the search bar and install
+cd "{directory}"
 	
-	cd "C:\Users\WB546716\Documents\GitHub\Stata-IE-Visual-Library\Library\Venn Diagram\Proportional Venn"
+sysuse auto
 
-	use "data.dta" 
+generate heavy=weight>3000
 
-    venndiag med_l_any_2 med_k_any_16 med_l_any_3
+generate expensive=price>4000
+
+label variable foreign "foreign"
+
+pvenn foreign heavy
+
+graph export "proportional-venn.png", as(png) replace
 	
-	graph export "3-way-venn.png", as(png) replace
-
 * Have a lovely day!
