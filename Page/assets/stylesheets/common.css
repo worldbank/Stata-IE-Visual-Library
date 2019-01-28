@@ -108,6 +108,12 @@ nav{
 	display: flex;
 }
 
+#subnavbar .link-box {
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+
 #subnavbar li{
 	display: inline;
 	padding: 0% 4%;
