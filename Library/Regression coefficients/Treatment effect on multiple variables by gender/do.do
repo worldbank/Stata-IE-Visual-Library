@@ -22,7 +22,7 @@
 	est   clear
 	
 	* Loop on different subjects
-	foreach subject in math reading human_sci natural_sci average			{
+	foreach subject in math reading human_sci natural_sci average				{
 	
 		eststo `subject'_F :  qui reghdfe student_`subject'_std school_treated 	///
 						   if student_gender == 0				  				///
@@ -52,13 +52,13 @@
 										
 			   title("Treatment Effect")				
 			subtitle("Test Scores")
-			ytitle("Standard deviations")
-			yline(0, lstyle(foreground))
-			yscale(range(-0.2 0.4)) ylabel(-0.1(0.1)0.4)			
-			xlabel(1 "Math" 2 "Reading" 3 "Human Science" 4 "Natural Science" 5 "Average", alt)
+			  ytitle("Standard deviations")
+			  yline(0, lstyle(foreground))
+			  yscale(range(-0.1 0.4)) ylab(-0.1(0.1)0.4)			
+			  xlab(1 "Math" 2 "Reading" 3 "Human Science" 4 "Natural Science" 5 "Average", alt)
 			
 			legend(order(2 4) lab(2 "Female") lab(4 "Male"))
-			note("{bf:Note:} Points estimates with `statSignLevel'% confidence interval from regressions with strata fixed effects"
+			note("{bf:Note:} Point estimates with `statSignLevel'% confidence intervals from regressions with strata fixed effects"
 				 "and standard errors clustered at the school level.")
 			graphregion(color(white))
 		;	
