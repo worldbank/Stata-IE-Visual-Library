@@ -18,7 +18,7 @@ http://repec.sowi.unibe.ch/stata/coefplot/confidence-intervals.html#h-2
 	
 	ssc install coefplot, replace
 
-	cd // "{directory}"
+	cd "{directory}"
 			
 	use data.dta, clear
 	
