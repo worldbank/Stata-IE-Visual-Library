@@ -5,6 +5,8 @@
 
 	cd "{directory}"
 
+	ssc install firthlogit
+	
 * Load adofiles
 
 	* These files are created by the authors for the purposes of this study and are not publicly available for general use.
