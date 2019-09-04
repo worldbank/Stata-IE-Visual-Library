@@ -5,6 +5,7 @@ This command is not very flexible in the sense that the graph command does not r
 It is then very likely that when using this code on a different dataset or a different number of variables, you will need to change the format. 
 To do that you will need to play with the different parameters entered here (mostly lab_loc, xscale(range(-1.8 2), fxsize(120), fysize(`j'), graphregion(margin(0 0 0 0)), plotregion(margin(0 0 2 2))
 until you find the right specification for your specific data
+Code is inspired by TUP paper but database is different, with random assignement of treatment, explaining why there is no effect
 */
 
 clear all
